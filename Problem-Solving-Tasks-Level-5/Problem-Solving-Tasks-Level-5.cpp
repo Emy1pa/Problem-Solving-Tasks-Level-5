@@ -9,10 +9,10 @@ int main()
 
     clsDblLinkedList <int> MyDblLinkedList;
 
-    if (MyDblLinkedList.IsEmpty())
+   /* if (MyDblLinkedList.IsEmpty())
         cout << "\n\nYes List is Empty.\n";
     else
-        cout << "\n\nNo List is not Empty.\n";
+        cout << "\n\nNo List is not Empty.\n";*/
 
     MyDblLinkedList.InsertAtBeginning(5);
     MyDblLinkedList.InsertAtBeginning(4);
@@ -26,10 +26,14 @@ int main()
 
     cout << "\nNumber of items in the linked list = " << MyDblLinkedList.Size() << endl;
 
-    if (MyDblLinkedList.IsEmpty())
+  /*  if (MyDblLinkedList.IsEmpty())
         cout << "\n\nYes List is Empty.\n";
     else
-        cout << "\n\nNo List is not Empty.\n";
+        cout << "\n\nNo List is not Empty.\n";*/
+
+    cout << "\nExecuting .Clear()";
+    MyDblLinkedList.Clear();
+    cout << "\nNumber of items in the linked list = " << MyDblLinkedList.Size() << endl;
 }
 
 
