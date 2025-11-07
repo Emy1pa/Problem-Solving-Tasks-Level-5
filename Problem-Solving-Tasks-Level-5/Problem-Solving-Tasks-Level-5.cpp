@@ -19,6 +19,7 @@ int main()
     MyDblLinkedList.PrintList();
     cout << "\n";
 
+    cout << "\nNumber of items in the linked list = " << MyDblLinkedList.Size() << endl;
 }
 
 
