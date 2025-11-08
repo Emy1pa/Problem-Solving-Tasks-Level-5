@@ -24,16 +24,21 @@ int main()
     MyDblLinkedList.PrintList();
     cout << "\n";
 
-    cout << "\nNumber of items in the linked list = " << MyDblLinkedList.Size() << endl;
+    //cout << "\nNumber of items in the linked list = " << MyDblLinkedList.Size() << endl;
 
   /*  if (MyDblLinkedList.IsEmpty())
         cout << "\n\nYes List is Empty.\n";
     else
         cout << "\n\nNo List is not Empty.\n";*/
 
-    cout << "\nExecuting .Clear()";
-    MyDblLinkedList.Clear();
-    cout << "\nNumber of items in the linked list = " << MyDblLinkedList.Size() << endl;
+    //cout << "\nExecuting .Clear()";
+    //MyDblLinkedList.Clear();
+    //cout << "\nNumber of items in the linked list = " << MyDblLinkedList.Size() << endl;
+
+    MyDblLinkedList.Reverse();
+    cout << "\nLinked List Content after reverse:\n";
+    MyDblLinkedList.PrintList();
+    cout << "\n";
 }
 
 
