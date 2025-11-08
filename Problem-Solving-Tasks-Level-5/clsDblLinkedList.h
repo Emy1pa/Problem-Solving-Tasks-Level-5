@@ -7,6 +7,7 @@ class clsDblLinkedList {
 
 protected:
 	int _Size = 0;
+
 public:
 	class Node {
 
@@ -160,6 +161,20 @@ public:
 		}
 		if (temp != nullptr)
 			head = temp->prev;
+	}
+
+	Node* GetNode(int Index) {
+		int Counter = 0;
+		if (Index > _Size - 1 || Index < 0)
+			return NULL;
+		Node* current = head;
+		while (current != NULL && (current->next != NULL)) {
+			if (Counter == Index)
+				break;
+			current = current->next;
+			Counter++;
+		}
+		return current;
 	}
 };
 
