@@ -47,8 +47,13 @@ int main()
 
     //cout << "\nItem (2) value is: " << MyDblLinkedList.GetItem(2) << endl;
 
-    MyDblLinkedList.UpdateItem(2, 500);
+   /* MyDblLinkedList.UpdateItem(2, 500);
     cout << "\nAfter Updating Item(2): " << "\n";
+    MyDblLinkedList.PrintList();
+    cout << "\n";*/
+
+    MyDblLinkedList.InsertAfter(1, 500);
+    cout << "\nAfter Insert: " << "\n";
     MyDblLinkedList.PrintList();
     cout << "\n";
 }
