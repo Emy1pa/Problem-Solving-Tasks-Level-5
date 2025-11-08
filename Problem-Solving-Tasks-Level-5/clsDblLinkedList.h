@@ -180,9 +180,20 @@ public:
 	T GetItem(int Index){
 		Node* ItemNode = GetNode(Index);
 		if (ItemNode == NULL)
-			return Null;
+			return NULL;
 		else
 			return ItemNode->value;
+	}
+
+	bool UpdateItem(int Index, T newValue){
+		Node* ItemNode = GetNode(Index);
+		if (ItemNode != NULL) {
+			ItemNode->value = newValue;
+			return true;
+		}
+		else
+			return false;
+		
 	}
 };
 
