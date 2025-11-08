@@ -40,10 +40,12 @@ int main()
     MyDblLinkedList.PrintList();
     cout << "\n";*/
 
-    clsDblLinkedList <int> ::Node* N;
+    /*clsDblLinkedList <int> ::Node* N;
     N = MyDblLinkedList.GetNode(2);
 
-    cout << "\nNode Value is: " << N->value << endl;
+    cout << "\nNode Value is: " << N->value << endl;*/
+
+    cout << "\nItem (2) value is: " << MyDblLinkedList.GetItem(2) << endl;
 }
 
 
