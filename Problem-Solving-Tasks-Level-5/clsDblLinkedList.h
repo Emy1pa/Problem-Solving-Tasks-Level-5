@@ -37,12 +37,13 @@ public:
 
 	void PrintList() {
 		
-		Node* temp = head;
+		Node* current = head;
 		//cout << "NULL <--> ";
-		while (temp != NULL) {
-			cout << temp->value << " ";
-			temp = temp->next;
+		while (current != NULL) {
+			cout << current->value << " ";
+			current = current->next;
 		}
+		cout << "\n";
 		//cout << "NULL";
 		
 	}
@@ -114,7 +115,7 @@ public:
 		Node* temp = head;
 		head = head->next;
 		if (head != NULL)
-			temp->prev = NULL;
+			head->prev = NULL;
 		delete temp;
 		_Size--;
 	}
@@ -153,14 +154,17 @@ public:
 	void Reverse() {
 		Node* current = head;
 		Node* temp = nullptr;
+
 		while (current != nullptr) {
 			temp = current->prev;
 			current->prev = current->next;
 			current->next = temp;
+
 			current = current->prev;
 		}
 		if (temp != nullptr)
 			head = temp->prev;
+		
 	}
 
 	Node* GetNode(int Index) {
