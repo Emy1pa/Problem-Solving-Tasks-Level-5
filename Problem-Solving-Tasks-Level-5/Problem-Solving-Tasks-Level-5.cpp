@@ -1,61 +1,35 @@
 #include <iostream>
-#include "clsDblLinkedList.h"
+#include "clsMyQueue.h"
 
 using namespace std;
 
 
 int main()
 {
+    clsMyQueue <int> MyQueue;
 
-    clsDblLinkedList <int> MyDblLinkedList;
+    MyQueue.push(10);
+    MyQueue.push(20);
+    MyQueue.push(30);
+    MyQueue.push(40);
+    MyQueue.push(50);
 
-   /* if (MyDblLinkedList.IsEmpty())
-        cout << "\n\nYes List is Empty.\n";
-    else
-        cout << "\n\nNo List is not Empty.\n";*/
-
-    MyDblLinkedList.InsertAtBeginning(5);
-    MyDblLinkedList.InsertAtBeginning(4);
-    MyDblLinkedList.InsertAtBeginning(3);
-    MyDblLinkedList.InsertAtBeginning(2);
-    MyDblLinkedList.InsertAtBeginning(1);
-
-    cout << "\n\nLinked List Content: \n";
-    MyDblLinkedList.PrintList();
+    cout << "\nQueue: \n";
+    MyQueue.Print();
     cout << "\n";
 
-    //cout << "\nNumber of items in the linked list = " << MyDblLinkedList.Size() << endl;
+    cout << "\nQueue Size: " << MyQueue.Size() << endl;
+    cout << "\nQueue Front: " << MyQueue.Front() << endl;
+    cout << "\nQueue Back: " << MyQueue.Back() << endl;
 
-  /*  if (MyDblLinkedList.IsEmpty())
-        cout << "\n\nYes List is Empty.\n";
-    else
-        cout << "\n\nNo List is not Empty.\n";*/
+    MyQueue.Pop();
 
-    //cout << "\nExecuting .Clear()";
-    //MyDblLinkedList.Clear();
-    //cout << "\nNumber of items in the linked list = " << MyDblLinkedList.Size() << endl;
-
-   /* MyDblLinkedList.Reverse();
-    cout << "\nLinked List Content after reverse:\n";
-    MyDblLinkedList.PrintList();
-    cout << "\n";*/
-
-    /*clsDblLinkedList <int> ::Node* N;
-    N = MyDblLinkedList.GetNode(2);
-
-    cout << "\nNode Value is: " << N->value << endl;*/
-
-    //cout << "\nItem (2) value is: " << MyDblLinkedList.GetItem(2) << endl;
-
-   /* MyDblLinkedList.UpdateItem(2, 500);
-    cout << "\nAfter Updating Item(2): " << "\n";
-    MyDblLinkedList.PrintList();
-    cout << "\n";*/
-
-    MyDblLinkedList.InsertAfter(1, 500);
-    cout << "\nAfter Insert: " << "\n";
-    MyDblLinkedList.PrintList();
+    cout << "\nQueue after pop(): \n";
+    MyQueue.Print();
     cout << "\n";
+
+    system("pause > 0");
+    return 0;
 }
 
 

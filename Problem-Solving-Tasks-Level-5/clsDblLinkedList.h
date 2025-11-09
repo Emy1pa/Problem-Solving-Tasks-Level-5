@@ -38,12 +38,12 @@ public:
 	void PrintList() {
 		
 		Node* temp = head;
-		cout << "NULL <--> ";
+		//cout << "NULL <--> ";
 		while (temp != NULL) {
-			cout << temp->value << " <--> ";
+			cout << temp->value << " ";
 			temp = temp->next;
 		}
-		cout << "NULL";
+		//cout << "NULL";
 		
 	}
 
