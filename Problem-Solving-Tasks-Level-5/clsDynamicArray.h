@@ -144,5 +144,49 @@ public:
 		if (Index != -1)
 			 DeleteItemAt(Index);
 	}
+
+	bool InsertAt(int Index, T value) {
+
+		if (Index > _Size || Index < 0)
+			return false;
+
+		_Size++;
+		_TempArray = new T[_Size];
+
+		for (int i = 0; i < Index; i++)
+		{
+			_TempArray[i] = OriginalArray[i];
+		}
+		_TempArray[Index] = value;
+
+		for (int i = Index; i < _Size -1; i++)
+		{
+			_TempArray[i + 1] = OriginalArray[i];
+		}
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
+		return true;
+	}
+
+	void InsertAtBeginning(T value) {
+		InsertAt(0, value);
+	}
+
+	bool InsertBefore(int Index, T value) {
+		if(Index < 1)
+			return InsertAt(0, value);
+		else
+			InsertAt(Index - 1, value);
+	}
+
+	bool InsertAfter(int Index, T value) {
+		if (Index >= Size)
+			return InsertAt(_Size, value);
+		else 
+			InsertAt(Index + 1, value);
+	}
+	void InsertAtEnd(T value) {
+		InsertAt(_Size, value);
+	}
 };
 
