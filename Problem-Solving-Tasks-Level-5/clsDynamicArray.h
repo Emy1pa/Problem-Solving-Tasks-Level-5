@@ -76,7 +76,7 @@ public:
 
 	void Reverse() {
 
-		_TempArray = new T[TempSize];
+		_TempArray = new T[_Size];
 		int counter = 0;
 
 		for (int i = _Size - 1; i >= 0; i--)
@@ -94,4 +94,28 @@ public:
 		delete[] OriginalArray;
 		OriginalArray = _TempArray;
 	}
+
+	bool DeleteItemAt(int Index){
+		
+		if (Index >= _Size || Index < 0)
+			return false;
+
+		_Size--;
+
+		_TempArray = new T[_Size];
+
+		for (int i = 0; i < Index; i++)
+		{
+			_TempArray[i] = OriginalArray[i];
+		}
+		for (int i = Index+1; i < _Size + 1; i++)
+		{
+			_TempArray[i - 1] = OriginalArray[i];
+
+		}
+		delete OriginalArray;
+		OriginalArray = _TempArray;
+		return true;
+	}
 };
+
