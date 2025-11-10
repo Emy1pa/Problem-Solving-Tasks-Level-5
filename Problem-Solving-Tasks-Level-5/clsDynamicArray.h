@@ -127,7 +127,22 @@ public:
 
 	void DeleteLastItem(){
 		DeleteItemAt(_Size - 1);
+	}
 
+	int Find(T value){
+		for (int i = 0; i < _Size; i++)
+		{
+			if (value == OriginalArray[i])
+				return i;
+		}
+		return -1;
+	}
+
+	void DeleteItem(T value){
+
+		int Index = Find(value);
+		if (Index != -1)
+			 DeleteItemAt(Index);
 	}
 };
 

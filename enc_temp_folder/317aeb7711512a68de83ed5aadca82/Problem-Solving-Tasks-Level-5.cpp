@@ -25,7 +25,7 @@ int main()
     if (Index == -1)
         cout << "\nItem was not Found :-( \n";
     else
-        cout << "\n30 is found at index: " << Index;
+        cout << "\n30 is found at index: " << Index << endl;
 
 
     MyDynamicArray.DeleteItem(30);
