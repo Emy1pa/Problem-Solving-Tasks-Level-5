@@ -6,7 +6,6 @@ using namespace std;
 
 int main()
 {
-   
 
     clsDynamicArray <int> MyDynamicArray(5);
     
@@ -21,14 +20,16 @@ int main()
     cout << "\nArray Items: \n";
     MyDynamicArray.PrintList();
 
-    MyDynamicArray.Resize(2);
-    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
-    cout << "\nArray Items after resize to 2: \n";
+    cout << "\nItem(2): " << MyDynamicArray.GetItem(2) << "\n";
+
+    MyDynamicArray.Reverse();
+
+    cout << "\nArray Items after reverse: \n";
     MyDynamicArray.PrintList();
 
-    MyDynamicArray.Resize(10);
-    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
-    cout << "\nArray Items after resize to 10: \n";
+    MyDynamicArray.Clear();
+
+    cout << "\nArray Items after clear: \n";
     MyDynamicArray.PrintList();
 
     system("pause > 0");
