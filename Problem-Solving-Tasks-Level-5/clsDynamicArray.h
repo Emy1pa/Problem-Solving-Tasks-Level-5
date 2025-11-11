@@ -180,7 +180,7 @@ public:
 	}
 
 	bool InsertAfter(int Index, T value) {
-		if (Index >= Size)
+		if (Index >= _Size)
 			return InsertAt(_Size, value);
 		else 
 			InsertAt(Index + 1, value);
