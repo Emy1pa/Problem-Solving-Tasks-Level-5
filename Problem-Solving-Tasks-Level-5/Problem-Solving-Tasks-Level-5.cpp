@@ -1,64 +1,53 @@
 #include <iostream>
-#include "clsMyStackArr.h"
+#include "clsMyString.h"
+
 using namespace std;
 
 int main()
 {
-    clsMyStackArr <int> MyStack;
+    
+    cout << "\n\n\t\t\t\t\t\t Undo/Redo Project \n\n";
 
-    MyStack.push(10);
-    MyStack.push(20);
-    MyStack.push(30);
-    MyStack.push(40);
-    MyStack.push(50);
+    clsMyString S1;
 
-    cout << "\nStack: \n";
-    MyStack.Print();
+    cout << "\nS1 = " << S1.value << "\n";
+    S1.value = "Mohammed";
+   
+    cout << "S1 = " << S1.value << "\n";
+    S1.value = "Mohammed2";
 
-    cout << "\nStack Size: " << MyStack.Size();
-    cout << "\nStack Front: " << MyStack.front();
-    cout << "\nStack Back: " << MyStack.back();
+    cout << "S1 = " << S1.value << "\n";
+    S1.value = "Mohammed3";
 
-    MyStack.pop();
-
-    cout << "\n\nStack after pop() : \n";
-    MyStack.Print();
+    cout << "S1 = " << S1.value << "\n";
 
 
-    cout << "\n\n Item(2) : " << MyStack.GetItem(2);
+    cout << "\n\nUndo: ";
+    cout << "\n----------\n";
 
+    S1.Undo();
+    cout << "\nS1 after undo = " << S1.value << "\n";
 
-    MyStack.Reverse();
-    cout << "\n\nStack after reverse() : \n";
-    MyStack.Print();
+    S1.Undo();
+    cout << "\nS1 after undo = " << S1.value << "\n";
 
+    S1.Undo();
+    cout << "\nS1 after undo = " << S1.value << "\n";
 
-    MyStack.UpdateItem(2, 600);
-    cout << "\n\nStack after updating Item(2) to 600 : \n";
-    MyStack.Print();
+    cout << "\n\nRedo: ";
+    cout << "\n----------\n";
 
+    S1.Redo();
+    cout << "\nS1 after redo = " << S1.value << "\n";
 
-    MyStack.InsertAfter(2, 800);
-    cout << "\n\nStack after Inserting 800 after Item(2) : \n";
-    MyStack.Print();
+    S1.Redo();
+    cout << "\nS1 after redo = " << S1.value << "\n";
 
+    S1.Redo();
+    cout << "\nS1 after redo = " << S1.value << "\n";
 
-
-    MyStack.InsertAtFront(1000);
-    cout << "\n\nStack after Inserting 1000 at front: \n";
-    MyStack.Print();
-
-
-    MyStack.InsertAtBack(2000);
-    cout << "\n\nStack after Inserting 2000 at back: \n";
-    MyStack.Print();
-
-
-    MyStack.Clear();
-    cout << "\n\nStack after Clear(): \n";
-    MyStack.Print();
 
     system("pause>0");
-
+    return 0;
 
 }
