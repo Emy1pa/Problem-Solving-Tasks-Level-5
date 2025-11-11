@@ -2,11 +2,9 @@
 
 #include <iostream>
 #include "clsDynamicArray.h"
-
-
 using namespace std;
-template <class T>
 
+template <class T>
 class clsMyQueueArr
 {
 
