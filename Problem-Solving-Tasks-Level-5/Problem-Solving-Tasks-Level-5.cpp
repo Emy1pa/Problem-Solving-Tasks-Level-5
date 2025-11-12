@@ -1,50 +1,52 @@
 #include <iostream>
-#include "clsMyString.h"
+#include "clsQueueLine.h"
+
 
 using namespace std;
 
 int main()
 {
-    
-    cout << "\n\n\t\t\t\t\t\t Undo/Redo Project \n\n";
-
-    clsMyString S1;
-
-    cout << "\nS1 = " << S1.value << "\n";
-    S1.value = "Mohammed";
+    clsQueueLine PayBillsQueue("A0", 10);
+    clsQueueLine SubscriptionsQueue("B0", 5);
    
-    cout << "S1 = " << S1.value << "\n";
-    S1.value = "Mohammed2";
 
-    cout << "S1 = " << S1.value << "\n";
-    S1.value = "Mohammed3";
+    PayBillsQueue.IssueTicket();
+    PayBillsQueue.IssueTicket();
+    PayBillsQueue.IssueTicket();
+    PayBillsQueue.IssueTicket();
+    PayBillsQueue.IssueTicket();
 
-    cout << "S1 = " << S1.value << "\n";
+
+    cout << "\nPay Bills Queue Info:\n";
+    PayBillsQueue.PrintInfo();
+
+    PayBillsQueue.PrintTicketsLineRTL();
+    PayBillsQueue.PrintTicketsLineLTR();
+
+    PayBillsQueue.PrintAllTickets();
 
 
-    cout << "\n\nUndo: ";
-    cout << "\n----------\n";
+    PayBillsQueue.ServeNextClient();
+    cout << "\nPay Bills Queue After Serving One client\n";
+    PayBillsQueue.PrintInfo();
 
-    S1.Undo();
-    cout << "\nS1 after undo = " << S1.value << "\n";
+    cout << "\nSubscriptions Queue Info:\n";
 
-    S1.Undo();
-    cout << "\nS1 after undo = " << S1.value << "\n";
+    SubscriptionsQueue.IssueTicket();
+    SubscriptionsQueue.IssueTicket();
+    SubscriptionsQueue.IssueTicket();
 
-    S1.Undo();
-    cout << "\nS1 after undo = " << S1.value << "\n";
 
-    cout << "\n\nRedo: ";
-    cout << "\n----------\n";
+    SubscriptionsQueue.PrintInfo();
 
-    S1.Redo();
-    cout << "\nS1 after redo = " << S1.value << "\n";
+    SubscriptionsQueue.PrintTicketsLineRTL();
+    SubscriptionsQueue.PrintTicketsLineLTR();
 
-    S1.Redo();
-    cout << "\nS1 after redo = " << S1.value << "\n";
+    SubscriptionsQueue.PrintAllTickets();
 
-    S1.Redo();
-    cout << "\nS1 after redo = " << S1.value << "\n";
+    SubscriptionsQueue.ServeNextClient();
+    cout << "\nSubscriptions Queue After Serving One client\n";
+    SubscriptionsQueue.PrintInfo();
 
 
     system("pause>0");
